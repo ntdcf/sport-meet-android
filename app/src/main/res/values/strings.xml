@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">SportMeetV3</string>
+    <string name="title_activity_login">用户登录</string>
+
+    <!--用户登录页显示字-->
+    <string name="login_button_enter">登录</string>
+    <string name="login_button_reset">取消</string>
+    <string name="login_button_reg">没有账号？注册吧~"</string>
+    <!--用户注册页的文字-->
+    <string name="reg_button_reg">注册</string>
+    <!--主页中的文字-->
+    <string name="index_act">活动查询</string>
+    <string name="index_item_sign_up">项目报名</string>
+    <string name="index_weather">天气查询</string>
+    <string name="index_msg">信息发布</string>
+    <string name="index_user_info">用户详情</string>
+    <string name="index_map">校园地图</string>
+</resources>
