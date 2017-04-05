@@ -1,9 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_sign_up"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="luohao.com.sportmeetv3.activitys.SignUpActivity">
+    android:stretchColumns="0"
 
-</android.support.constraint.ConstraintLayout>
+    tools:context="luohao.com.sportmeetv3.activitys.LoginActivity">
+    <TableRow android:padding="10dp"
+        android:background="@color/colorPrimary">
+        <EditText
+            android:layout_margin="5dp"
+            android:layout_height="wrap_content"
+            android:textColorHint="@color/fontcolor"
+            android:textColor="@color/fontcolor"
+            android:hint="搜索报名项目"
+            />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="#36648B"
+            android:textColor="@color/fontcolor"
+            android:text="搜索"/>
+    </TableRow>
+    <ListView
+        android:id="@+id/acivity_sign_up_list"
+        android:layout_margin="15dp">
+    </ListView>
+
+
+
+
+</TableLayout>
