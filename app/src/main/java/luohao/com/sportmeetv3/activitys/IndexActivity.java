@@ -21,6 +21,7 @@ public class IndexActivity extends Activity implements View.OnClickListener{
     private TextView stunumb;
 
     private Button activity;
+    private Button userinfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +34,11 @@ public class IndexActivity extends Activity implements View.OnClickListener{
 
         activity = (Button) findViewById(R.id.index_item_sign_up);
         activity.setOnClickListener(this);
+
+        userinfo = (Button) findViewById(R.id.index_user_info);
+        userinfo.setOnClickListener(this);
+
+
 
         Bundle data = getIntent().getExtras();
         String username = data.getString("username");
@@ -60,6 +66,10 @@ public class IndexActivity extends Activity implements View.OnClickListener{
         switch (view.getId()) {
             case R.id.index_item_sign_up:
                 intent = new Intent(IndexActivity.this, SignUpActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.index_user_info:
+                intent = new Intent(IndexActivity.this, UserInfoActivity.class);
                 startActivity(intent);
                 break;
         }

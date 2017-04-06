@@ -46,7 +46,10 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(SignUpActivity.this, R.layout.support_simple_spinner_dropdown_item, list);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+                SignUpActivity.this,
+                R.layout.support_simple_spinner_dropdown_item,
+                list);
         listitem.setAdapter(adapter);
     }
 
