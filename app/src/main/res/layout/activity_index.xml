@@ -34,73 +34,41 @@
         android:paddingBottom="20dp"
         android:textSize="20dp" />
 
-    <Button
-        android:id="@+id/index_act"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_below="@id/index_stu_num"
-        android:layout_toLeftOf="@+id/index_item_sign_up"
-        android:padding="25dp"
-        android:text="@string/index_act"
-         />
 
     <Button
         android:id="@+id/index_item_sign_up"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginRight="78dp"
-        android:layout_marginEnd="78dp"
-        android:layout_marginTop="30dp"
         android:layout_below="@+id/index_stu_num"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:padding="25dp"
+        android:layout_margin="15dp"
         android:text="@string/index_item_sign_up"
         />
 
     <Button
         android:id="@+id/index_weather"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="25dp"
+        android:layout_margin="10dp"
         android:text="@string/index_weather"
-        android:layout_below="@id/index_act"
-        android:layout_alignLeft="@id/index_act"
-        android:layout_alignStart="@id/index_act"
+        android:layout_below="@id/index_item_sign_up"
         />
 
     <Button
         android:id="@+id/index_msg"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="25dp"
+        android:layout_margin="10dp"
+        android:layout_below="@id/index_weather"
         android:text="@string/index_msg"
-        android:layout_alignBaseline="@id/index_weather"
-        android:layout_alignBottom="@id/index_weather"
-        android:layout_toRightOf="@id/index_act"
-        android:layout_toEndOf="@id/index_act"
          />
 
     <Button
         android:id="@+id/index_user_info"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="25dp"
+        android:layout_margin="10dp"
         android:text="@string/index_user_info"
-        android:layout_below="@id/index_weather"
-        android:layout_alignLeft="@id/index_weather"
-        android:layout_alignStart="@id/index_weather" />
-
-    <Button
-        android:id="@+id/index_map"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="25dp"
-        android:text="@string/index_map"
-        android:layout_alignBaseline="@id/index_user_info"
-        android:layout_alignBottom="@id/index_user_info"
-        android:layout_toRightOf="@id/index_weather"
-        android:layout_toEndOf="@id/index_weather" />
+        android:layout_below="@id/index_msg"
+      />
 
 </RelativeLayout>

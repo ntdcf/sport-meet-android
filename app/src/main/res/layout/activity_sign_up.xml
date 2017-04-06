@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:stretchColumns="0"
-
-    tools:context="luohao.com.sportmeetv3.activitys.LoginActivity">
+    >
     <TableRow android:padding="10dp"
         android:background="@color/colorPrimary">
         <EditText
@@ -17,6 +16,7 @@
             android:hint="搜索报名项目"
             />
         <Button
+            android:id="@+id/item_search"
             android:layout_width="wrap_content"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
@@ -25,11 +25,9 @@
             android:text="搜索"/>
     </TableRow>
     <ListView
-        android:id="@+id/acivity_sign_up_list"
+        android:id="@+id/sign_up_list"
         android:layout_margin="15dp">
     </ListView>
-
-
 
 
 </TableLayout>

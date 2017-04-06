@@ -23,6 +23,7 @@ public class LoginActService extends Thread{
         loginMsg.put("password", password);
         String res = LinkService.link(loginMsg.toString(), "POST", LinkService.ADDRESS_API+"login");
         Thread.sleep(200);
+        if (res == null) return false;
         if (Integer.parseInt(res) == 0) {
             return false;
         }
