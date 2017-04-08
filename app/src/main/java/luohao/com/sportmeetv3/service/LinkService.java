@@ -59,7 +59,7 @@ public class LinkService {
         });
         t.setPriority(10);
         t.start();
-        Thread.sleep(500);
+        Thread.sleep(300);
         return res[0];
     }
 }
