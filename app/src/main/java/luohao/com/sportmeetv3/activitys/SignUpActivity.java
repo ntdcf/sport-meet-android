@@ -8,6 +8,9 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -31,24 +34,21 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         listitem = (ListView) findViewById(R.id.sign_up_list);
 
-        JSONArray items = null;
-        List<String> list = new ArrayList<String>();
-        Activity activity = new Activity();
-        JSONObject item = null;
+
+        List<Activity> list = null;
+        Gson items = new Gson();
         try {
-            items = new JSONArray(LinkService.link("null", "POST", LinkService.ADDRESS_API+"getMsg"));
-            for(int i = 0; i<items.length(); i++) {
-                item =  items.getJSONObject(i);
-                list.add(item.getString("msg"));
-            }
+            System.out.println(LinkService.link("null", "POST", LinkService.ADDRESS_API+"getMsg"));
+            list = items.fromJson(
+                    LinkService.link("null", "POST", LinkService.ADDRESS_API+"getMsg"),
+                    new TypeToken<List<Activity>>(){}.getType()
+            );
         } catch (InterruptedException e) {
             e.printStackTrace();
-        } catch (JSONException e) {
-            e.printStackTrace();
         }
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(
+        ActivityAdapter adapter = new ActivityAdapter(
                 SignUpActivity.this,
-                R.layout.support_simple_spinner_dropdown_item,
+                R.layout.items_view,
                 list);
         listitem.setAdapter(adapter);
     }

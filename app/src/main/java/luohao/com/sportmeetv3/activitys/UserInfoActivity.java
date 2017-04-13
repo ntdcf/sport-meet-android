@@ -9,13 +9,7 @@ import android.widget.Spinner;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 import luohao.com.sportmeetv3.Adapter.CollageItem;
 import luohao.com.sportmeetv3.R;
@@ -34,12 +28,10 @@ public class UserInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
 
-
-        JSONArray collageData = null;
         List<Collage> list = null;
+        //在活动上铺数据，学院信息
         Gson collagegson = new Gson();
         try {
-            collageData = new JSONArray();
             list = collagegson.fromJson(
                     LinkService.link("", "POST", LinkService.ADDRESS_API+"usercollage"),
                     new TypeToken<List<Collage>>(){}.getType()
@@ -47,8 +39,7 @@ public class UserInfoActivity extends AppCompatActivity {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-//        List<String> cm = new ArrayList<String>();
-//        for (Collage c : list) cm.add(c.getName());
+
         CollageItem collageAdapter = new CollageItem(
                 UserInfoActivity.this,
                 R.layout.collage_item,
@@ -56,7 +47,7 @@ public class UserInfoActivity extends AppCompatActivity {
         );
         collageSpinner = (Spinner) findViewById(R.id.user_info_collage_select);
         collageSpinner.setAdapter(collageAdapter);
-
+        //年级信息
         gradeSpinner = (Spinner) findViewById(R.id.user_info_grade_edit);
         ArrayAdapter<String> gradeAdapter = new ArrayAdapter<String>(
                 UserInfoActivity.this,

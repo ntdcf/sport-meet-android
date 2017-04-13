@@ -22,7 +22,6 @@ public class LoginActService extends Thread{
         loginMsg.put("username", username);
         loginMsg.put("password", password);
         String res = LinkService.link(loginMsg.toString(), "POST", LinkService.ADDRESS_API+"login");
-        Thread.sleep(200);
         if (res == null) return false;
         if (Integer.parseInt(res) == 0) {
             return false;
@@ -36,7 +35,6 @@ public class LoginActService extends Thread{
         regMsg.put("password", password);
         regMsg.put("railname", railname);
         String res = LinkService.link(regMsg.toString(), "POST", LinkService.ADDRESS_API+"reg");
-        Thread.sleep(200);
         System.out.println(res);
         if (Integer.parseInt(res) == 0) return false;
         return true;
@@ -44,7 +42,6 @@ public class LoginActService extends Thread{
 
     public String infoUser(String username) throws JSONException, InterruptedException {
         String res = LinkService.link(username, "POST", LinkService.ADDRESS_API+"userindex");
-        Thread.sleep(200);
         return res;
     }
 }
