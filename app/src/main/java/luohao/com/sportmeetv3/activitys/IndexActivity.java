@@ -8,6 +8,8 @@ import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Text;
@@ -22,6 +24,9 @@ public class IndexActivity extends Activity implements View.OnClickListener{
 
     private Button activity;
     private Button userinfo;
+
+    private String username;
+    private String UserInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,16 +46,16 @@ public class IndexActivity extends Activity implements View.OnClickListener{
 
 
         Bundle data = getIntent().getExtras();
-        String username = data.getString("username");
+        username = data.getString("username");
 
         LoginActService users = new LoginActService();
-        String UserInfo = null;
+
         JSONObject userjson = null;
         try {
             UserInfo = users.infoUser(username);
             System.out.println(UserInfo);
             userjson = new JSONObject(UserInfo);
-            System.out.println(userjson.getString("railname"));
+
             stuname.setText("姓名："+userjson.getString("railname"));
             stunumb.setText("学号："+userjson.getString("username"));
         } catch (JSONException e) {
@@ -70,6 +75,7 @@ public class IndexActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.index_user_info:
                 intent = new Intent(IndexActivity.this, UserInfoActivity.class);
+                intent.putExtra("info", UserInfo);
                 startActivity(intent);
                 break;
         }
