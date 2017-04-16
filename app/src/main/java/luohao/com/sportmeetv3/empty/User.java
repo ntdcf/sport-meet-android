@@ -14,7 +14,6 @@ public class User implements Serializable{
     private int collage;
     private String internetname;
     private int grade;
-    private int classin;
 
     public int getId() {
         return id;
@@ -72,14 +71,6 @@ public class User implements Serializable{
         this.grade = grade;
     }
 
-    public int getClassin() {
-        return classin;
-    }
-
-    public void setClassin(int classin) {
-        this.classin = classin;
-    }
-
     @Override
     public String toString() {
         return "User{" +
@@ -90,7 +81,6 @@ public class User implements Serializable{
                 ", collage='" + collage + '\'' +
                 ", internetname='" + internetname + '\'' +
                 ", grade=" + grade +
-                ", classin=" + classin +
                 '}';
     }
 }

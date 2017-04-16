@@ -44,7 +44,6 @@ public class IndexActivity extends Activity implements View.OnClickListener{
         userinfo.setOnClickListener(this);
 
 
-
         Bundle data = getIntent().getExtras();
         username = data.getString("username");
 
@@ -71,6 +70,7 @@ public class IndexActivity extends Activity implements View.OnClickListener{
         switch (view.getId()) {
             case R.id.index_item_sign_up:
                 intent = new Intent(IndexActivity.this, SignUpActivity.class);
+                intent.putExtra("username", username);
                 startActivity(intent);
                 break;
             case R.id.index_user_info:

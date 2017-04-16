@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:textSize="20dp"
             android:text="姓名："/>
-        <EditText
+        <TextView
             android:id="@+id/user_info_railname_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -100,6 +100,7 @@
         android:textSize="20dp"
         android:text="修改密码" />
     <Button
+        android:id="@+id/user_info_change_user_info_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
