@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="luohao.com.sportmeetv3.activitys.WeatherActivity">
+    <TextView
+        android:id="@+id/weather_title"
+        android:text="今日天气"
+        android:textColor="@color/fontcolor"
+        android:padding="20dp"
+        android:textSize="30dp"
+        />
+
+    <TextView
+        android:id="@+id/weather_weather_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/fontcolor"
+        android:textSize="20dp"
+        android:padding="15dp"
+        />
+    <TextView
+        android:id="@+id/weather_tempche_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/fontcolor"
+        android:padding="15dp"
+        android:textSize="20dp"
+        />
+    <TextView
+        android:id="@+id/weather_wind_show"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/fontcolor"
+        android:padding="15dp"
+        android:textSize="20dp"
+        />
+
+</TableLayout>
