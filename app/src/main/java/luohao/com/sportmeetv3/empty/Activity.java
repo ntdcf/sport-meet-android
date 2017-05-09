@@ -1,5 +1,7 @@
 package luohao.com.sportmeetv3.empty;
 
+import com.google.gson.Gson;
+
 /**
  * Created by luohao3 on 2017/4/6.
  */
@@ -9,6 +11,7 @@ public class Activity {
     private int sendtime;
     private int user;
     private String msg;
+    private boolean sex;
 
     public int getId() {
         return id;
@@ -42,13 +45,16 @@ public class Activity {
         this.msg = msg;
     }
 
+    public boolean getSex() {
+        return sex;
+    }
+
+    public void setSex(boolean sex) {
+        this.sex = sex;
+    }
+
     @Override
     public String toString() {
-        return "Activity{" +
-                "id=" + id +
-                ", sendtime=" + sendtime +
-                ", user=" + user +
-                ", msg='" + msg + '\'' +
-                '}';
+        return new Gson().toJson(this);
     }
 }

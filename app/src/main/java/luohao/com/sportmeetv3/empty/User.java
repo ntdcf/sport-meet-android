@@ -1,5 +1,7 @@
 package luohao.com.sportmeetv3.empty;
 
+import com.google.gson.Gson;
+
 import java.io.Serializable;
 
 /**
@@ -14,6 +16,7 @@ public class User implements Serializable{
     private int collage;
     private String internetname;
     private int grade;
+    private boolean sex;
 
     public int getId() {
         return id;
@@ -71,16 +74,16 @@ public class User implements Serializable{
         this.grade = grade;
     }
 
+    public boolean getSex() {
+        return sex;
+    }
+
+    public void setSex(boolean sex) {
+        this.sex = sex;
+    }
+
     @Override
     public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
-                ", railname='" + railname + '\'' +
-                ", collage='" + collage + '\'' +
-                ", internetname='" + internetname + '\'' +
-                ", grade=" + grade +
-                '}';
+        return new Gson().toJson(this);
     }
 }

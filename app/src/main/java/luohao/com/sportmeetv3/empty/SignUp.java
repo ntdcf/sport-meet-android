@@ -1,5 +1,7 @@
 package luohao.com.sportmeetv3.empty;
 
+import com.google.gson.Gson;
+
 /**
  * Created by luohao on 2017/4/16.
  */
@@ -35,10 +37,6 @@ public class SignUp {
 
     @Override
     public String toString() {
-        return "SignUp{" +
-                "id=" + id +
-                ", activityid=" + activityid +
-                ", userid=" + userid +
-                '}';
+        return new Gson().toJson(this);
     }
 }

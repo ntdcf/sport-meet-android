@@ -23,6 +23,7 @@ import luohao.com.sportmeetv3.empty.Activity;
 public class ActivityAdapter extends ArrayAdapter<Activity> {
     private int resource;
     private int size;
+    private List<Activity> list;
 
     public ActivityAdapter(Context context, int resource, List<Activity> objects) {
         super(context, resource, objects);
@@ -43,5 +44,9 @@ public class ActivityAdapter extends ArrayAdapter<Activity> {
             itemUser.setText(String.valueOf(activity.getUser()));
         }
         return view;
+    }
+
+    public void setItemList(List<Activity> list) {
+        this.list = list;
     }
 }

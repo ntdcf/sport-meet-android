@@ -26,7 +26,8 @@
         <activity android:name=".activitys.SignUpActivity" />
         <activity android:name=".activitys.UserInfoActivity" />
         <activity android:name=".activitys.ChangePasswordActivity" />
-        <activity android:name=".activitys.WeatherActivity"></activity>
+        <activity android:name=".activitys.WeatherActivity" />
+        <activity android:name=".activitys.SignedUpActivity"></activity>
     </application>
 
 </manifest>

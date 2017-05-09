@@ -8,6 +8,7 @@
     <TableRow android:padding="10dp"
         android:background="@color/colorPrimary">
         <EditText
+            android:id="@+id/sign_up_edit_search"
             android:layout_margin="5dp"
             android:layout_height="wrap_content"
             android:textColorHint="@color/fontcolor"
@@ -15,14 +16,15 @@
             android:hint="搜索报名项目"
             />
         <Button
-            android:id="@+id/item_search"
+            android:id="@+id/item_search_button"
             android:layout_width="wrap_content"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:background="#36648B"
+            android:background="#848989"
             android:textColor="@color/fontcolor"
             android:text="搜索"/>
     </TableRow>
+
     <ListView
         android:id="@+id/sign_up_list"
         android:layout_margin="15dp">

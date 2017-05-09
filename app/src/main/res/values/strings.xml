@@ -11,6 +11,7 @@
     <!--主页中的文字-->
     <string name="index_act">活动查询</string>
     <string name="index_item_sign_up">项目报名</string>
+    <string name="index_item_signed_up">查看已经报名的项目</string>
     <string name="index_weather">天气查询</string>
     <string name="index_msg">信息发布</string>
     <string name="index_user_info">用户详情</string>

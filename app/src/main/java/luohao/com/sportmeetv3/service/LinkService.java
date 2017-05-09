@@ -1,6 +1,7 @@
 package luohao.com.sportmeetv3.service;
 
 import java.io.BufferedReader;
+import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -17,8 +18,7 @@ import java.net.URL;
 
 public class LinkService {
 //    private static URL url;
-    public static final String ADDRESS_API = "http://10.18.127.21:8888/SportMeetService/";//"";http://10.18.127.21:8888/SportMeetService/http://192.168.10.147:8888/SportMeetService/
-
+    public static final String ADDRESS_API = "http://192.168.42.135:8888/SportMeetService/";//http://192.168.42.217:8888/SportMeetService/http://192.168.1.197:8888/SportMeetService/http://192.168.10.147:8888/SportMeetService/"";http://10.18.127.21:8888/SportMeetService/http://192.168.10.147:8888/SportMeetService/
     private static final String[] res = new String[1];
     public static String link(final String Data,  final String method, final String API) throws InterruptedException {
         Thread t =new Thread(new Runnable() {
@@ -36,9 +36,10 @@ public class LinkService {
                     httpURLConnection.setRequestProperty("Content-Type", "application/json");
 
                     OutputStream outputStream = httpURLConnection.getOutputStream();
-                    ObjectOutputStream objectOutputStream = new ObjectOutputStream(outputStream);
-                    objectOutputStream.writeObject(Data);
-                    objectOutputStream.flush();
+                    DataOutputStream dataOutputStream = new DataOutputStream(outputStream);
+                    dataOutputStream.write(Data.getBytes());
+                    dataOutputStream.flush();
+
                     if (httpURLConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
                         InputStream inputStream = httpURLConnection.getInputStream();
                         BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream, "utf8"));

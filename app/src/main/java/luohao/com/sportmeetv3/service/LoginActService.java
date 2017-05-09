@@ -1,9 +1,13 @@
 package luohao.com.sportmeetv3.service;
 
+import com.google.gson.Gson;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+
+import luohao.com.sportmeetv3.empty.User;
 
 /**
  * Created by luohao3 on 2017/3/25.
@@ -29,12 +33,9 @@ public class LoginActService extends Thread{
         return true;
     }
 
-    public boolean regUser(String username, String password, String railname) throws JSONException, InterruptedException {
-        JSONObject regMsg = new JSONObject();
-        regMsg.put("username", username);
-        regMsg.put("password", password);
-        regMsg.put("railname", railname);
-        String res = LinkService.link(regMsg.toString(), "POST", LinkService.ADDRESS_API+"reg");
+    public boolean regUser(User user) throws JSONException, InterruptedException {
+        String regMsg = new Gson().toJson(user);
+        String res = LinkService.link(regMsg, "POST", LinkService.ADDRESS_API+"reg");
         System.out.println(res);
         if (Integer.parseInt(res) == 0) return false;
         return true;
