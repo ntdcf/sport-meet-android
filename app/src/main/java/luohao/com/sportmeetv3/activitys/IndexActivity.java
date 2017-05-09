@@ -26,6 +26,7 @@ public class IndexActivity extends Activity implements View.OnClickListener{
     private Button userinfo;
     private Button weather;
     private Button signedAct;
+    private Button sendMsg;
 
     private String username;
     private String UserInfo;
@@ -50,6 +51,9 @@ public class IndexActivity extends Activity implements View.OnClickListener{
 
         signedAct = (Button) findViewById(R.id.index_item_signed_up);
         signedAct.setOnClickListener(this);
+
+        sendMsg = (Button) findViewById(R.id.index_msg) ;
+        sendMsg.setOnClickListener(this);
 
         Bundle data = getIntent().getExtras();
         username = data.getString("username");
@@ -91,6 +95,11 @@ public class IndexActivity extends Activity implements View.OnClickListener{
                 break;
             case R.id.index_item_signed_up:
                 intent = new Intent(IndexActivity.this, SignedUpActivity.class);
+                intent.putExtra("info", UserInfo);
+                startActivity(intent);
+                break;
+            case R.id.index_msg:
+                intent = new Intent(IndexActivity.this, SendMsgActivity.class);
                 intent.putExtra("info", UserInfo);
                 startActivity(intent);
                 break;
